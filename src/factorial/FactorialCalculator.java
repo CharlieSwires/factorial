@@ -14,7 +14,7 @@ public class FactorialCalculator {
 		n = 100; // Change this to the desired number
 		BigInteger factorialnr = calculateFactorialNotRecursive(n);
 		System.out.println("Factorial of " + n + " is: " + factorialnr);
-		n = 203680; // Change this to the desired number
+		n = 484582; // Change this to the desired number
 		BigInteger factorialto = calculateFactorialTimeout(n, 1L*60L);
 		System.out.println("Factorial of " + n + " is: " + factorialto);
 	}
@@ -67,7 +67,6 @@ public class FactorialCalculator {
 		for (int i = 2; i <= n; i++) {
 			t.iteration(i);
 			result = result.multiply(BigInteger.valueOf(i));
-			if (t.getStarted() == false) System.exit(0);
 		}
 		t.stopt();
 
@@ -104,7 +103,8 @@ public class FactorialCalculator {
 				try {
 					if (LocalTime.now().minusSeconds(s).compareTo(startTime) == 1) {
 						started = false;
-						throw new RuntimeException("Took too long only "+s+"seconds allowed. It reached: "+i+" iterations.");
+						System.out.println("Took too long only "+s+" seconds allowed. It reached: "+i+" iterations.");
+						System.exit(0);
 					}
 					MyTimer.sleep(10L);
 				} catch (InterruptedException e) {
