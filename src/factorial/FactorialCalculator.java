@@ -4,11 +4,7 @@ import java.math.BigInteger;
 import java.time.LocalTime;
 
 public class FactorialCalculator {
-	static FactorialCalculator f = null;
-	static MyTimer t = null;
 	public static void main(String[] args) {
-		f = new FactorialCalculator();
-		t = f.new MyTimer();
 		int n = 20; // Change this to the desired number
 		long factorial = calculateFactorial(n);
 		System.out.println("Factorial of " + n + " is: " + factorial);
@@ -59,6 +55,10 @@ public class FactorialCalculator {
 		if (n < 0 || s < 0) {
 			throw new IllegalArgumentException("n can't be negative nor ms");
 		}
+		FactorialCalculator f = null;
+		MyTimer t = null;
+		f = new FactorialCalculator();
+		t = f.new MyTimer();
 
 		BigInteger result = BigInteger.ONE;
 		t.start();
