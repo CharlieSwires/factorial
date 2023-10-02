@@ -51,9 +51,9 @@ public class FactorialCalculator {
 		return result;
 	}
 
-	public static BigInteger calculateFactorialTimeout(int n, long s) {
-		if (n < 0 || s < 0) {
-			throw new IllegalArgumentException("n can't be negative nor s");
+	public static BigInteger calculateFactorialTimeout(int n, long timeout) {
+		if (n < 0 || timeout < 0) {
+			throw new IllegalArgumentException("n can't be negative nor timeout");
 		}
 		FactorialCalculator f = null;
 		MyTimer t = null;
@@ -62,7 +62,7 @@ public class FactorialCalculator {
 
 		BigInteger result = BigInteger.ONE;
 		t.start();
-		t.go(s);
+		t.go(timeout);
 
 		for (int i = 2; i <= n; i++) {
 			t.iteration(i);
