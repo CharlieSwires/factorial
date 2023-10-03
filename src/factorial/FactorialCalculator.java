@@ -20,7 +20,7 @@ public class FactorialCalculator {
 	}
 
 	public static long calculateFactorial(int n) {
-		if (n < 0 || n > 20) throw new IllegalArgumentException("n can't be negative and 20! is the largest long can store");
+		if (n < 0 || n > 20) throw new IllegalArgumentException("n can't be negative and over 20! is the largest long can store");
 		if (n == 0) {
 			return 1;
 		} else {
