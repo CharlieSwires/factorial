@@ -53,7 +53,7 @@ public class FactorialCalculator {
 
 	public static BigInteger calculateFactorialTimeout(int n, long timeout) {
 		if (n < 0 || timeout < 0) {
-			throw new IllegalArgumentException("n can't be negative nor timeout");
+			throw new IllegalArgumentException("n can't be negative nor timeout negative");
 		}
 		FactorialCalculator f = null;
 		MyTimer t = null;
