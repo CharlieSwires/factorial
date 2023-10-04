@@ -14,8 +14,8 @@ public class FactorialCalculator {
 		n = 100; // Change this to the desired number
 		BigInteger factorialnr = calculateFactorialNotRecursive(n);
 		System.out.println("Factorial of " + n + " is: " + factorialnr);
-		n = 484582; // Change this to the desired number
-		BigInteger factorialto = calculateFactorialTimeout(n, 1L*60L);
+		n = 1046911; // Change this to the desired number
+		BigInteger factorialto = calculateFactorialTimeout(n, 5L*60L);
 		System.out.println("Factorial of " + n + " is: " + factorialto);
 	}
 
