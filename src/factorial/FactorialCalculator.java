@@ -5,7 +5,27 @@ import java.time.LocalTime;
 
 public class FactorialCalculator {
 	public static void main(String[] args) {
-		int n = 20; // Change this to the desired number
+		int n = 0;
+		assert(calculateFactorial(n) == 1);
+		assert(calculateFactorialBigInt(n).equals(new BigInteger("1")));
+		assert(calculateFactorialNotRecursive(n).equals(new BigInteger("1")));
+		assert(calculateFactorialTimeout(n, 1L).equals(new BigInteger("1")));
+		n = 1;
+		assert(calculateFactorial(n) == 1);
+		assert(calculateFactorialBigInt(n).equals(new BigInteger("1")));
+		assert(calculateFactorialNotRecursive(n).equals(new BigInteger("1")));
+		assert(calculateFactorialTimeout(n, 1L).equals(new BigInteger("1")));
+		n = 2;
+		assert(calculateFactorial(n) == 2);
+		assert(calculateFactorialBigInt(n).equals(new BigInteger("2")));
+		assert(calculateFactorialNotRecursive(n).equals(new BigInteger("2")));
+		assert(calculateFactorialTimeout(n, 1L).equals(new BigInteger("2")));
+		n = 3;
+		assert(calculateFactorial(n) == 6);
+		assert(calculateFactorialBigInt(n).equals(new BigInteger("6")));
+		assert(calculateFactorialNotRecursive(n).equals(new BigInteger("6")));
+		assert(calculateFactorialTimeout(n, 1L).equals(new BigInteger("6")));
+		n = 20; // Change this to the desired number
 		long factorial = calculateFactorial(n);
 		System.out.println("Factorial of " + n + " is: " + factorial);
 		n = 100; // Change this to the desired number
